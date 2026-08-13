@@ -1,7 +1,7 @@
 -- ══════════════════════════════════════════
 -- MiniStore — Soluciones con Outer JOINs
--- Autor: [Tu nombre]
--- Fecha: [Fecha de entrega]
+-- Autor: Muroni Ivo
+-- Fecha: 13/08/2026
 -- ══════════════════════════════════════════
 -- ── CONSULTA 1: LEFT JOIN ─────────────────
 -- Pregunta de negocio: ¿Qué productos del catálogo nunca fueron vendidos?
@@ -31,5 +31,4 @@ WHERE p.producto_id IS NULL;
 -- Los registros huérfanos aparecerán con NULL en las columnas de productos.
 SELECT p.producto_id ,v.venta_id
 FROM productos p FULL OUTER JOIN ventas v
-ON p.producto_id = v.producto_id
-WHERE p.producto_id IS NULL OR v.venta_id IS NULL;
+ON p.producto_id = v.producto_id;
